@@ -24,6 +24,7 @@ select{
 button{
     background-color: rgba(25, 182, 25, 0.9);
     border-radius: 10px;
+    padding: 5px 10px; 
     font-size: 25px;
     transition: .3s ease;
 }
@@ -104,3 +105,34 @@ table.lista td:not(:last-child) {
     padding: 15px;
 }
 
+.btn-excluir {
+    background-color: #dc3545;
+    color: white;
+    border-radius: 10px; 
+    padding: 5px 10px; 
+    cursor: pointer;
+    transition: .3s ease;
+}
+
+.btn-excluir:hover {
+    background-color: #b02a37;
+    transform: scale(1.05);
+    transition: .3s ease;
+}
+
+.btn-excluir:active {
+    transform: scale(0.9);
+}
+
+.concluida {
+    background-color: #9bfdd1 !important;
+    color: #6c757d;
+}
+
+.data-conclusao {
+    font-size: 14px;
+    color: #555;
+    margin-left: 10px;
+    font-style: italic;
+    text-decoration: none;
+}

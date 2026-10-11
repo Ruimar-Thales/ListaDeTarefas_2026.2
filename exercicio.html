@@ -112,15 +112,39 @@
 
             const tdAcoes = document.createElement("td");
 
+            const btnConcluir = document.createElement("button");
+            btnConcluir.textContent = "Concluir";
+            btnConcluir.type = "button";
+            btnConcluir.style.marginRight = "5px";
+
+            const spanData = document.createElement("span");
+            spanData.classList.add("data-conclusao");
+
+            btnConcluir.onclick = function(){
+                novaLinha.classList.toggle("concluida");
+
+                if(novaLinha.classList.contains("concluida")){
+                    const agora =  new Date()
+                    const dataFormatada = agora.toLocaleDateString() + " às " + agora.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit'});
+                    spanData.textContent = dataFormatada;
+                } else{
+                    spanData.textContent = ""
+                }
+            }
+
             const btnExcluir = document.createElement("button");
             btnExcluir.textContent = "Excluir";
             btnExcluir.type = "button";
+
+            btnExcluir.classList.add("btn-excluir");
 
             btnExcluir.onclick = function(){
                 novaLinha.remove();
             }
 
+            tdAcoes.appendChild(btnConcluir);
             tdAcoes.appendChild(btnExcluir);
+            tdAcoes.appendChild(spanData);
 
             novaLinha.appendChild(tdTarefa);
             novaLinha.appendChild(tdPrioridade);
@@ -131,6 +155,8 @@
             corpoTabela.appendChild(novaLinha);
 
             TAREFA.value = "";
+
+
 
         }
     </script>
