@@ -99,6 +99,23 @@
                 return;
             }
 
+            const linhasTabela = document.querySelectorAll("#dadosTarefa tr");
+            
+            for (let linha of linhasTabela) {
+                const textoTarefa = linha.children[0].textContent;
+                const textoPrioridade = linha.children[1].textContent;
+                const textoCategoria = linha.children[2].textContent;
+
+                if (
+                    textoTarefa === TAREFA.value && 
+                    textoPrioridade === PRIORIDADE.value && 
+                    textoCategoria === CATEGORIA.value
+                ) {
+                    alert("Esta tarefa idêntica já existe na lista!");
+                    return;
+                }
+            }
+
             const novaLinha = document.createElement("tr");
 
             const tdTarefa = document.createElement("td");
