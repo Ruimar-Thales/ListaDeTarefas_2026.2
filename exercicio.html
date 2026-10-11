@@ -90,25 +90,7 @@
         const CATEGORIA = document.getElementById("categoria");
 
         function salvar(){
-            event.preventDefault();
             
-            const PRIORIDADE = document.querySelector('input[name="prioridade"]:checked')
-
-            if (TAREFA.value === "" || !PRIORIDADE){
-                alert("'Tarefa' e/ou 'Prioridade' não pode estar vazio");
-                return;
-            }
-
-            document.getElementById("dadosTarefa").innerHTML += `
-            <tr>
-            
-                <td>${TAREFA.value}</td>
-                <td>${PRIORIDADE.value}</td>
-                <td>${CATEGORIA.value}</td>
-                <td><button type="button" onclick="remover(this)">Excluir</button></td>
-
-            </tr>
-            `
         }
 
         function remover(botaoExcluir){
