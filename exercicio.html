@@ -86,16 +86,52 @@
     </section>
 
     <script>
-        const TAREFA = document.getElementById("tarefa");
-        const CATEGORIA = document.getElementById("categoria");
 
         function salvar(){
+            event.preventDefault();
             
-        }
+            const TAREFA = document.getElementById("tarefa");
+            const CATEGORIA = document.getElementById("categoria");
+            const PRIORIDADE = document.querySelector('input[name="prioridade"]:checked');
 
-        function remover(botaoExcluir){
-            const linha = botaoExcluir.closest("tr");
-            linha.remove();
+            if (TAREFA.value === "" || !PRIORIDADE){
+                alert("'Tarefa' ou 'Prioridade' não pode estar vazio");
+                return;
+            }
+
+            const novaLinha = document.createElement("tr");
+
+            const tdTarefa = document.createElement("td");
+            tdTarefa.textContent = TAREFA.value;
+
+            const tdPrioridade = document.createElement("td");
+            tdPrioridade.textContent = PRIORIDADE.value;
+
+            const tdCategoria = document.createElement("td");
+            tdCategoria.textContent = CATEGORIA.value;
+
+            const tdAcoes = document.createElement("td");
+
+            const btnExcluir = document.createElement("button");
+            btnExcluir.textContent = "Excluir";
+            btnExcluir.type = "button";
+
+            btnExcluir.onclick = function(){
+                novaLinha.remove();
+            }
+
+            tdAcoes.appendChild(btnExcluir);
+
+            novaLinha.appendChild(tdTarefa);
+            novaLinha.appendChild(tdPrioridade);
+            novaLinha.appendChild(tdCategoria);
+            novaLinha.appendChild(tdAcoes);
+
+            const corpoTabela = document.getElementById("dadosTarefa");
+            corpoTabela.appendChild(novaLinha);
+
+            TAREFA.value = "";
+
         }
     </script>
 </body>
