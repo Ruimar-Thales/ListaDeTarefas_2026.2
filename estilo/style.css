@@ -1,0 +1,106 @@
+*{
+    font-family: "Poppins";
+}
+
+body{
+    background-color: #ffecd8c3;
+}
+
+.pagina{
+    background-color: #DEDEDE;
+    margin: 5px;
+    padding: 5px;
+    box-shadow: 3px 3px 5px #000;
+}
+
+input{
+    font-size: 20px;
+}
+
+select{
+    font-size: 20px;
+}
+
+button{
+    background-color: rgba(25, 182, 25, 0.9);
+    border-radius: 10px;
+    font-size: 25px;
+    transition: .3s ease;
+}
+button:hover{
+    background-color: green;
+    transform: scale(1.1);
+    transition: .3s ease;
+}
+button:active{
+    transform: scale(0.9);
+}
+
+.preenchimento{
+    background-color: #c1bfbf;
+    margin: 5px;
+    padding: 5px;
+    font-size: 22px;
+}
+
+.row{
+    display: flex;
+    flex-direction: row;
+    margin: 5px;
+    gap: 18%;
+}
+
+.col{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.radio-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+    margin-top: 5px;
+}
+
+tbody{
+    background-color: #00000010;
+}
+
+.lista {
+    font-size: 22px;
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.lista th, 
+.lista td {
+    text-align: left; 
+    padding: 15px 0;
+}
+
+.lista th:nth-child(1){
+    width: 35%; /* Coluna Tarefas*/
+    word-break: break-all;
+}
+
+.lista th:nth-child(4),.lista td:nth-child(4){
+    width: 30%;
+}
+.lista th:nth-child(2), td:nth-child(2), 
+.lista th:nth-child(3), td:nth-child(3){
+    width: 20%; /* Coluna Prioridade */
+}
+
+table.lista th:not(:last-child), 
+table.lista td:not(:last-child) {
+    border-right: 1px solid #606060;
+}
+
+.lista th,
+.lista td{
+    padding: 15px;
+}
+
